@@ -33,3 +33,9 @@ else
 
 /* Crie um programa para calcular a aposentadoria de uma pessoa.
 Comece criando constantes para armazenar nome, sexo, idade e contribuicao(em anos), por exemplo: */
+
+const nome = "Luan"
+const sexo = "M"
+const idade = 26
+const contribuicao = 15
+
