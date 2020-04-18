@@ -1,22 +1,37 @@
-/* Vetores e objetos
-Crie um programa com um objeto para armazenar dados de um programador como nome, idade e tecnologias que trabalha.
+/* Desafios para fortalecer alguns conceitos, entre eles:
 
-Um programador pode trabalhar com várias tecnologias, por isso armazene essas tecnologias em um array.
+Funções e métodos;
+Estruturas de repetição;
+Escopos.
+Usuários e tecnologias
+Crie um programa que armazena um array de usuários (objetos), cada usuário tem um nome e suas tecnologias 
+(novo array), por exemplo: */
 
-As tecnologias também devem ser objetos contendo nome e especialidade, use as tecnologias abaixo: */
+const usuarios = [
+    { nome: 'Carlos', tecnologia: ['HTML', 'CSS'] },
+    { nome: 'Jasmine', tecnologia: ['JavaScript', 'CSS'] },
+    { nome: 'Carlos', tecnologia: ['HTML', 'Node.js'] },
+    { nome: 'Luan', tecnologia: ['HTML','CSS','Node.js','Python'] }
+];
 
-const programador = {
-    nome: "Luan",
-    idade: 26,
-    tecnologias: [
-        {nome: "Python", especialidade: "Datascience"},
-        {nome: "C", especialidade: "microcontroladores"},
-        {nome: "SQL", especialidade: "Banco de dados"}
-    ]
-};
 
-/* Imprima em tela o nome e especialidade da primeira tecnologia que o usuário utiliza no seguinte formato:
+/* for(let i=0; i < usuarios.length; i++){
+    console.log(`${usuarios[i].nome} trabalha com as tecnologias ${usuarios[i].tecnologia}`)
+} */
 
-O usuário Carlos tem 32 anos e usa a tecnologia C++ com especialidade em Desktop */
+function checaSeUsuarioUsaCSS(usuario) {
+    for (let tecnologia of usuario.tecnologia) {
+        if (tecnologia == 'CSS')
+            return true
+    }
+    return false
+}
 
-console.log(`O usuário ${programador.nome} tem ${programador.idade} anos e usa a tecnologia ${programador.tecnologias[0].nome} com especialidade em ${programador.tecnologias[0].especialidade}`)
+for (let i=0; i< usuarios.length; i++){
+    const usuarioTrabalhaComCSS = checaSeUsuarioUsaCSS(usuarios[i])
+    if(usuarioTrabalhaComCSS)
+        console.log(`O usuário ${usuarios[i].nome} trabalha com CSS`)
+}
+
+
+//Percorra a lista de usuários com uma estrutura de repetição imprimindo em tela as informações dos usuários:
